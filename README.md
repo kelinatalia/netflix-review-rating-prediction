@@ -1,4 +1,4 @@
-# Netflix Review Rating Prediction (Text Mining)
+# Netflix Review Rating Prediction
 
 Predicts a Netflix Play Store review's star rating (1-5) from its text alone, comparing classic NLP features against pretrained transformer features, with a focus on handling severe class imbalance.
 
@@ -30,7 +30,3 @@ Given only the text of a Play Store review, can a model recover the star rating 
 | **Best overall: SVM on pretrained transformer features + extra data + class weighting** | **0.529** |
 
 Imbalance treatment consistently helped classic representations (class weighting, oversampling, and SMOTE all beat the untreated baseline), but the largest gain came from switching to pretrained transformer features altogether. The persistent difficulty is separating neighboring ratings (2, 3, 4); with the test set collapsed to 3 classes (negative/neutral/positive), the same best model reaches 0.695 macro F1. All scores carry roughly ±0.09 uncertainty from bootstrap resampling, given the small test set.
-
-## Tools
-
-Python, pandas, scikit-learn, Gensim (Word2Vec), imbalanced-learn (SMOTE/oversampling), Hugging Face transformers (sentence embeddings, RoBERTa, BERT), google-play-scraper, Matplotlib/Seaborn.

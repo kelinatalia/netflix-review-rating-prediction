@@ -12,12 +12,12 @@ Given only the text of a Play Store review, can a model recover the star rating 
 
 ## Pipeline
 
-1. **EDA** — rating distribution, review length, writing style, stopword effects, dominant words and n-grams per rating, topic modeling, and cases where review text doesn't match its star rating.
-2. **Preprocessing** — cleaning, emoji-to-text conversion, contraction/slang expansion, lemmatization vs. stemming, stopword removal.
-3. **Text representation** — TF-IDF vs. Word2Vec (trained from scratch on the corpus).
-4. **Modeling** — SVM and Random Forest, grid-searched over both representations (4 combinations), evaluated with macro F1 (chosen over accuracy, since always predicting 5 scores ~68% accuracy on its own).
-5. **Imbalanced data treatment** — class weighting, random oversampling, and SMOTE, compared against the untreated baseline.
-6. **Scaling up** — scraping and incorporating additional real minority-class reviews, then swapping in pretrained transformer features (sentence embeddings, RoBERTa sentiment probabilities, BERT star-rating probabilities) in place of TF-IDF/Word2Vec.
+1. **EDA**: rating distribution, review length, writing style, stopword effects, dominant words and n-grams per rating, topic modeling, and cases where review text doesn't match its star rating.
+2. **Preprocessing**: cleaning, emoji-to-text conversion, contraction/slang expansion, lemmatization vs. stemming, stopword removal.
+3. **Text representation**: TF-IDF vs. Word2Vec (trained from scratch on the corpus).
+4. **Modeling**: SVM and Random Forest, grid-searched over both representations (4 combinations), evaluated with macro F1 (chosen over accuracy, since always predicting 5 scores ~68% accuracy on its own).
+5. **Imbalanced data treatment**: class weighting, random oversampling, and SMOTE, compared against the untreated baseline.
+6. **Scaling up**: scraping and incorporating additional real minority-class reviews, then swapping in pretrained transformer features (sentence embeddings, RoBERTa sentiment probabilities, BERT star-rating probabilities) in place of TF-IDF/Word2Vec.
 
 ## Results
 
